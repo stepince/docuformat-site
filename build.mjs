@@ -31,6 +31,8 @@ for (const [route, html] of routes) {
 await writeFile('dist/404.html', notFound());
 await cp('styles.css', 'dist/styles.css');
 await cp('assets', 'dist/assets', { recursive: true });
+// Root-level static files: favicon.ico, icon.svg, PNG icons, web manifest.
+await cp('public', 'dist', { recursive: true });
 
 const today = new Date().toISOString().slice(0, 10);
 const priority = (r) => (r === '/' ? '1.0' : tools.some((t) => `/${t.slug}/` === r) ? '0.8' : '0.5');

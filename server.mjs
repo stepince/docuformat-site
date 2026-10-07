@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { extname, resolve, sep } from 'node:path';
 
 const root = resolve('dist');
-const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.txt': 'text/plain; charset=utf-8', '.xml': 'application/xml' };
+const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.svg': 'image/svg+xml', '.png': 'image/png', '.ico': 'image/x-icon', '.webmanifest': 'application/manifest+json', '.txt': 'text/plain; charset=utf-8', '.xml': 'application/xml' };
 // In dev, point "Try DocuFormat" at the local app (vite dev server) unless previewing production output.
 const devApp = process.env.SERVE_DIST === '1' ? null : process.env.DOCUFORMAT_DEV_APP || 'http://localhost:5173/';
 

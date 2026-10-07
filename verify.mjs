@@ -31,12 +31,13 @@ for (const [route, html] of pages) {
   const out = new Set();
   for (const m of html.matchAll(/href="(\/[^"#]*)(?:#[^"]*)?"/g)) {
     const h = m[1];
-    if (/\.(css|svg|png|xml|txt)$/.test(h)) continue;
+    if (/\.(css|svg|png|xml|txt|ico|webmanifest)$/.test(h)) continue;
     out.add(h);
     if (!pages.has(h)) problems.push(`${route}: broken internal link ${h}`);
   }
   links.set(route, out);
 }
+for (const f of ['favicon.ico', 'icon.svg', 'icon-48.png', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png', 'site.webmanifest']) await stat(`dist/${f}`).catch(() => problems.push(`missing dist/${f}`));
 const sitemap = await readFile('dist/sitemap.xml', 'utf8');
 for (const route of pages.keys()) {
   if (!sitemap.includes(`<loc>${SITE_URL}${route}</loc>`)) problems.push(`${route}: missing from sitemap`);
