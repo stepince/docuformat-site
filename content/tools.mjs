@@ -2,6 +2,8 @@
 // Claims are limited to what the application does today (see README, "Verified behavior").
 // «…» inside example code marks an error span.
 
+import { shellPage } from './shell.mjs';
+
 const ex = (file, lang, code, extra = {}) => ({ file, lang, code, ...extra });
 
 export const tools = [
@@ -117,7 +119,7 @@ export const tools = [
       ['Does DocuFormat send my JSON to an AI automatically?', 'No. Content is only sent after you click AI Fix or Explain, and the first time you are asked to confirm.'],
       ['Is the AI-fixed JSON guaranteed valid?', 'No guarantee, which is why DocuFormat re-validates it locally and shows you the result before you use it.'],
       ['Which AI provider does it use?', 'The server forwards requests to an AI provider (currently Anthropic). The application shows which model is in use.'],
-      ['Can I use it for formats other than JSON?', 'Yes. AI Fix and Explain work for YAML, XML, CSV, SQL and cURL as well.']
+      ['Can I use it for formats other than JSON?', 'Yes. AI Fix and Explain work for YAML, XML, CSV, SQL, cURL and shell commands as well.']
     ],
     related: ['json-fixer', 'json-validator', 'sql-fixer', 'curl-explainer']
   },
@@ -315,6 +317,7 @@ export const tools = [
     sections: [
       { h2: 'One option per line', html: `<p>The formatter puts the URL and each option on its own line with a trailing backslash, the way people write cURL by hand, and pretty-prints a JSON or XML request body so it is readable too. Because POST is implied by a body, the explicit <code>-X POST</code> is dropped; the method is still shown in the Request view. A compact one-line form is available through Minify.</p>` },
       { h2: 'See the request, not the flags', html: `<p>Switch to the <strong>Request</strong> view to see the same command broken down into its parts: method, URL, query parameters, headers, authentication, cookies and body. It is quicker than decoding <code>-H</code>, <code>-u</code> and <code>-d</code> by eye. The <a href="/curl-parser/">cURL parser</a> page covers that view in detail.</p>` },
+      { h2: 'Not every command is cURL', html: `<p>If what you pasted is a Docker, kubectl, Git or other shell command rather than an HTTP request, use the <a href="/shell-command-formatter/">shell command formatter</a>. It converts long commands between single-line and multi-line forms. cURL is a shell command too, so it works there as well, but this page adds the HTTP-level view.</p>` },
       { h2: 'Never executed', html: `<p>A cURL command is parsed as text. DocuFormat never runs it and never makes the request, so you can inspect commands you do not fully trust, including ones that contain shell operators. Anything after a shell operator such as <code>|</code> or <code>&amp;&amp;</code> is ignored and flagged.</p>` },
       { h2: 'Mind the secrets', html: `<p>Authorization headers and tokens are shown as written, not masked. Formatting is local, but if you choose an AI action, the command is sent to the AI provider, so remove real credentials first.</p>` }
     ],
@@ -323,7 +326,7 @@ export const tools = [
       ['Can it convert cURL to fetch or Python?', 'Not today. DocuFormat formats and explains cURL commands; conversion to other languages is not currently offered.'],
       ['What if my command has unsupported options?', 'Unknown options are ignored and listed as warnings, so you can see what was skipped.']
     ],
-    related: ['curl-parser', 'curl-explainer', 'json-formatter', 'sql-formatter']
+    related: ['shell-command-formatter', 'curl-parser', 'curl-explainer', 'json-formatter']
   },
   {
     slug: 'curl-parser',
@@ -352,7 +355,7 @@ export const tools = [
       ['Does it read files referenced with @?', 'No. It shows the file reference but never reads files.'],
       ['Can I paste a command that starts with a $ prompt?', 'Yes. A leading shell prompt is recognized and removed.']
     ],
-    related: ['curl-formatter', 'curl-explainer', 'json-validator', 'xml-formatter']
+    related: ['curl-formatter', 'shell-command-formatter', 'curl-explainer', 'json-validator']
   },
   {
     slug: 'curl-explainer',
@@ -381,6 +384,8 @@ export const tools = [
       ['Does it execute the command to find out what it does?', 'No. The command is never run and no request is sent.'],
       ['Can I explain a command that has an error?', 'Yes. AI Fix can also propose a corrected command, which you review before using.']
     ],
-    related: ['curl-formatter', 'curl-parser', 'sql-fixer', 'ai-json-fixer']
+    related: ['curl-formatter', 'curl-parser', 'shell-command-formatter', 'ai-json-fixer']
   }
+  ,
+  shellPage
 ];

@@ -39,9 +39,14 @@ To preview live CTAs locally: `DOCUFORMAT_APP_URL=http://localhost:5173/ npm run
 Claims were checked against `../docuformat` source and by running its formatters on every on-page example. Keep copy within this list:
 
 - Detection, parse, validate, format, minify run in the browser. Minify exists for JSON, XML, SQL, cURL only (not YAML/CSV).
+- **Shell (not yet in the app when written):** the Shell pages are written to the product brief, not verified against the app. Re-verify every Shell example and claim once the feature ships (see "Shell re-verification" below).
 - JSON is strict (no comments/trailing commas). YAML formatting does not expand flow collections or change quoting. SQL "validation" is structural only (parens, strings, comments, dangling clauses), and keywords are uppercased. XML checks well-formedness only. CSV delimiters: comma, tab, semicolon, pipe.
 - cURL is parsed, never executed; `@file` is never read; values (tokens) are **not masked** in the UI. The app has internal cURL emitters for other languages, but the UI does not expose them, so the site does not advertise conversion.
 - AI Fix / Explain: explicit click, first-use consent notice, request goes browser → DocuFormat server → Anthropic; 512 KB limit; prompts do not redact secrets; fix output is re-validated locally and never auto-applied. Server logs only method, route, status, duration, body size.
 - No account in the app today ("no sign-up needed to try").
 
 Re-check `privacy` and AI claims against the production deployment (provider, logging, retention) before launch. Re-run the example check if formatter output changes.
+
+## Shell re-verification
+
+`content/shell.mjs` and the Shell sections of `lib/home.mjs` were written from the product brief before the Shell formatter existed in the app. When it ships, run its formatter on every Shell example (and the cURL embedded-JSON example, which uses the *cURL* formatter's real output) and confirm: both directions' exact output, preservation of quotes/env vars/pipes/redirects/chaining, whether shell input auto-detects cURL, whether cURL is handled by Shell or hands off to the cURL formatter, the supported-commands list, AI Fix/Explain for Shell, and that the privacy copy matches. Remove this note once verified.
