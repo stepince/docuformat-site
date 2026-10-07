@@ -15,14 +15,15 @@ Deploy `dist/` to any static host that serves directory index pages, redirects `
 
 ## Configuration (confirm before launch)
 
-The production domain and app URL were not available in the repo, so these are placeholders:
+The production domain is a placeholder until confirmed; the app is not public yet:
 
 | Variable | Default | Used for |
 |---|---|---|
 | `DOCUFORMAT_SITE_URL` | `https://docuformat.com` | canonical URLs, Open Graph, sitemap, robots |
-| `DOCUFORMAT_APP_URL` | `https://app.docuformat.com/` | every "Try DocuFormat" / "Format X →" CTA |
+| `DOCUFORMAT_APP_URL` | *(unset)* | While unset, every CTA reads **Coming soon ↗** and links to `/coming-soon/`. Set it at launch and the CTAs become real "Try DocuFormat →" / "Format X →" links (HTTPS, or HTTP on localhost) |
+| `DOCUFORMAT_FORM_URL` | *(unset)* | Updates sign-up form on `/coming-soon/`. A `docs.google.com/forms/...` link is embedded; any other HTTPS link becomes a button; unset shows "Sign-up opens soon" |
 
-`npm run dev` rewrites CTAs to `http://localhost:5173/` (the app's Vite dev server; override with `DOCUFORMAT_DEV_APP`).
+To preview live CTAs locally: `DOCUFORMAT_APP_URL=http://localhost:5173/ npm run dev` (the app's Vite dev server).
 
 ## Structure
 

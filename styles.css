@@ -182,3 +182,8 @@ mark.err { background: rgba(255,123,114,.22); color: inherit; border-bottom: 2px
 
 .before-after .arrow { align-self: center; }
 body { overflow-x: hidden; }
+
+/* Coming-soon sign-up form */
+.form-card { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: #fff; }
+.form-card iframe { display: block; width: 100%; height: 640px; border: 0; }
+.caption { color: var(--muted); font-size: .9rem; }

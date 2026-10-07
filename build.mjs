@@ -3,12 +3,12 @@ import { cp, mkdir, rm, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { tools } from './content/tools.mjs';
 import { renderHome } from './lib/home.mjs';
-import { about, features, notFound, privacy } from './lib/info-pages.mjs';
-import { APP_URL, SITE_URL } from './lib/site.mjs';
+import { about, comingSoon, features, notFound, privacy } from './lib/info-pages.mjs';
+import { APP_URL, LIVE, SITE_URL } from './lib/site.mjs';
 import { renderTool } from './lib/tool-page.mjs';
 
-const appUrl = new URL(APP_URL);
-if (appUrl.protocol !== 'https:' && !(appUrl.protocol === 'http:' && ['localhost', '127.0.0.1'].includes(appUrl.hostname))) {
+const appUrl = LIVE ? new URL(APP_URL) : null;
+if (appUrl && appUrl.protocol !== 'https:' && !(appUrl.protocol === 'http:' && ['localhost', '127.0.0.1'].includes(appUrl.hostname))) {
   throw new Error('DOCUFORMAT_APP_URL must use HTTPS (or HTTP on localhost).');
 }
 
@@ -18,6 +18,7 @@ export const routes = new Map([
   ['/features/', features()],
   ['/privacy/', privacy()],
   ['/about/', about()],
+  ['/coming-soon/', comingSoon()],
   ...tools.map((t) => [`/${t.slug}/`, renderTool(t, tools)])
 ]);
 
