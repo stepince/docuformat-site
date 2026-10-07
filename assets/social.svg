@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" font-family="Helvetica,Arial,sans-serif">
+<rect width="1200" height="630" fill="#0d1117"/>
+<text x="80" y="170" font-size="34" fill="#7ee787" font-family="Menlo,Consolas,monospace" font-weight="700">{ } DocuFormat</text>
+<text x="80" y="290" font-size="84" font-weight="700" fill="#e6edf3">Format. Validate.</text>
+<text x="80" y="385" font-size="84" font-weight="700" fill="#e6edf3">Fix. Explain.</text>
+<text x="80" y="470" font-size="30" fill="#9da7b3">JSON · YAML · XML · CSV · SQL · cURL</text>
+<rect x="760" y="120" width="360" height="200" rx="14" fill="#161b22" stroke="#30363d"/>
+<g font-family="Menlo,Consolas,monospace" font-size="24"><text x="790" y="170" fill="#e6edf3">{</text><text x="820" y="206" fill="#79c0ff">"name"<tspan fill="#e6edf3">: </tspan><tspan fill="#a5d6ff">"DocuFormat"</tspan></text><text x="820" y="242" fill="#79c0ff">"active"<tspan fill="#e6edf3">: </tspan><tspan fill="#ff7b72">true</tspan></text><text x="790" y="278" fill="#e6edf3">}</text></g>
+<text x="760" y="360" font-size="24" fill="#7ee787" font-family="Menlo,Consolas,monospace">✓ Valid JSON</text>
+</svg>
