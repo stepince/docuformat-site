@@ -34,11 +34,10 @@ await cp('assets', 'dist/assets', { recursive: true });
 // Root-level static files: favicon.ico, icon.svg, PNG icons, web manifest.
 await cp('public', 'dist', { recursive: true });
 
-const today = new Date().toISOString().slice(0, 10);
 const priority = (r) => (r === '/' ? '1.0' : tools.some((t) => `/${t.slug}/` === r) ? '0.8' : '0.5');
 await writeFile('dist/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${[...routes.keys()].map((r) => `  <url><loc>${SITE_URL}${r}</loc><lastmod>${today}</lastmod><priority>${priority(r)}</priority></url>`).join('\n')}
+${[...routes.keys()].map((r) => `  <url><loc>${SITE_URL}${r}</loc><priority>${priority(r)}</priority></url>`).join('\n')}
 </urlset>
 `);
 await writeFile('dist/robots.txt', `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}/sitemap.xml\n`);
