@@ -18,13 +18,13 @@ npm run lint      # JavaScript syntax checks
 
 Same model as the other sites (Knowdexia, PerfLoad): **GitHub Pages from `main`** (Settings → Pages → Deploy from a branch → `main` / `/ (root)`). The generated pages live at the repo root next to `styles.css`, the icons, `CNAME`, `.nojekyll`, `robots.txt` and `sitemap.xml`. After editing `src/`, run `npm run build` and commit the result. Pushing to `main` deploys; there is no CI step.
 
-`CNAME` is written by the build from `DOCUFORMAT_SITE_URL`, so it currently contains the placeholder `docuformat.com`. Confirm the real domain before enabling Pages (and point DNS at GitHub Pages). Removing a page from `src/` does not delete its old folder at the root; delete it by hand.
+`CNAME` is written by the build from `DOCUFORMAT_SITE_URL`, so it contains `docuformat.dev`. Point DNS for `docuformat.dev` at GitHub Pages and enable "Enforce HTTPS" (`.dev` domains are HTTPS-only). Removing a page from `src/` does not delete its old folder at the root; delete it by hand.
 
 ## Configuration (confirm before launch)
 
 | Variable | Default | Used for |
 |---|---|---|
-| `DOCUFORMAT_SITE_URL` | `https://docuformat.com` (placeholder) | canonical URLs, Open Graph, structured data, sitemap, robots, `CNAME` |
+| `DOCUFORMAT_SITE_URL` | `https://docuformat.dev` | canonical URLs, Open Graph, structured data, sitemap, robots, `CNAME` |
 | `DOCUFORMAT_APP_URL` | *(unset)* | While unset, every CTA reads **Coming soon ↗** and links to `/coming-soon/`. Set it at launch and the CTAs become real "Try DocuFormat →" / "Format X →" links (HTTPS, or HTTP on localhost) |
 | `DOCUFORMAT_FORM_URL` | *(unset)* | Updates sign-up form on `/coming-soon/`. A `docs.google.com/forms/...` link is embedded; any other HTTPS link becomes a button; unset shows "Sign-up opens soon" |
 

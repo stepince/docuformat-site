@@ -1,7 +1,6 @@
 // Site-wide configuration and shared navigation data.
-// SITE_URL and APP_URL are build-time settings; the defaults are placeholders until the
-// production domain and application URL are confirmed (see README).
-export const SITE_URL = (process.env.DOCUFORMAT_SITE_URL || 'https://docuformat.com').replace(/\/$/, '');
+// SITE_URL and APP_URL are build-time settings (see README). The app URL is unset until the app is public.
+export const SITE_URL = (process.env.DOCUFORMAT_SITE_URL || 'https://docuformat.dev').replace(/\/$/, '');
 // While APP_URL is unset the app is not public: every CTA reads "Coming soon" and leads to /coming-soon.
 export const APP_URL = process.env.DOCUFORMAT_APP_URL || '';
 export const LIVE = Boolean(APP_URL);
