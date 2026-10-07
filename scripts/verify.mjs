@@ -1,19 +1,18 @@
-// Post-build SEO/integrity checks over dist/: unique titles and descriptions, one h1, canonical URLs,
-// resolvable internal links, sitemap coverage, and every page reachable from the homepage.
-import { readFile, readdir, stat } from 'node:fs/promises';
-import { join } from 'node:path';
-import { SITE_URL } from './lib/site.mjs';
+// Post-build SEO/integrity checks over the generated site at the repo root: unique titles and descriptions,
+// one h1, canonicals, resolvable internal links, sitemap coverage, and every page reachable from the homepage.
+import { readFile, stat } from 'node:fs/promises';
+import { tools } from '../src/content/tools.mjs';
+import { SITE_URL } from '../src/site.mjs';
 
+// The sitemap defines the published routes; every one must exist as <route>/index.html at the repo root.
 const pages = new Map();
-async function walk(dir) {
-  for (const name of await readdir(dir)) {
-    const p = join(dir, name);
-    if ((await stat(p)).isDirectory()) await walk(p);
-    else if (name === 'index.html') pages.set('/' + dir.slice(5).replace(/\\/g, '/') + (dir === 'dist' ? '' : '/'), await readFile(p, 'utf8'));
-  }
-}
-await walk('dist');
+const sitemap = await readFile('sitemap.xml', 'utf8');
+const routes = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((m) => m[1].replace(SITE_URL, ''));
 const problems = [];
+for (const r of routes) {
+  try { pages.set(r, await readFile(`.${r}index.html`, 'utf8')); } catch { problems.push(`${r}: sitemap lists a page that was not built`); }
+}
+for (const t of tools) if (!routes.includes(`/${t.slug}/`)) problems.push(`/${t.slug}/: tool page missing from sitemap`);
 const seen = { title: new Map(), description: new Map() };
 const links = new Map();
 for (const [route, html] of pages) {
@@ -37,8 +36,7 @@ for (const [route, html] of pages) {
   }
   links.set(route, out);
 }
-for (const f of ['favicon.ico', 'icon.svg', 'icon-48.png', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png', 'site.webmanifest']) await stat(`dist/${f}`).catch(() => problems.push(`missing dist/${f}`));
-const sitemap = await readFile('dist/sitemap.xml', 'utf8');
+for (const f of ['favicon.ico', 'icon.svg', 'icon-48.png', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png', 'site.webmanifest', 'styles.css', '404.html', 'CNAME', '.nojekyll', 'robots.txt']) await stat(f).catch(() => problems.push(`missing ${f}`));
 for (const route of pages.keys()) {
   if (!sitemap.includes(`<loc>${SITE_URL}${route}</loc>`)) problems.push(`${route}: missing from sitemap`);
   if (route !== '/' && ![...links].some(([r, l]) => r !== route && l.has(route))) problems.push(`${route}: no inbound links`);

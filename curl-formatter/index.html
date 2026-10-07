@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>cURL Command Formatter: Pretty Print and Explain cURL | DocuFormat</title>
+<meta name="description" content="Format long cURL commands into readable, multi-line requests and see the method, URL, headers, auth and body. Commands are parsed, never executed.">
+<link rel="canonical" href="https://docuformat.com/curl-formatter/">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DocuFormat">
+<meta property="og:title" content="cURL Command Formatter: Pretty Print and Explain cURL | DocuFormat">
+<meta property="og:description" content="Format long cURL commands into readable, multi-line requests and see the method, URL, headers, auth and body. Commands are parsed, never executed.">
+<meta property="og:url" content="https://docuformat.com/curl-formatter/">
+<meta property="og:image" content="https://docuformat.com/assets/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DocuFormat. Format. Validate. Fix. Explain.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="cURL Command Formatter: Pretty Print and Explain cURL | DocuFormat">
+<meta name="twitter:description" content="Format long cURL commands into readable, multi-line requests and see the method, URL, headers, auth and body. Commands are parsed, never executed.">
+<meta name="twitter:image" content="https://docuformat.com/assets/social.png">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"cURL command formatter","description":"Format long cURL commands into readable, multi-line requests and see the method, URL, headers, auth and body. Commands are parsed, never executed.","url":"https://docuformat.com/curl-formatter/","isPartOf":{"@type":"WebSite","name":"DocuFormat","url":"https://docuformat.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"DocuFormat","item":"https://docuformat.com/"},{"@type":"ListItem","position":2,"name":"cURL Formatter","item":"https://docuformat.com/curl-formatter/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does DocuFormat send the request?","acceptedAnswer":{"@type":"Answer","text":"No. cURL commands are parsed and displayed only. Nothing is executed or sent."}},{"@type":"Question","name":"Can it convert cURL to fetch or Python?","acceptedAnswer":{"@type":"Answer","text":"Not today. DocuFormat formats and explains cURL commands; conversion to other languages is not currently offered."}},{"@type":"Question","name":"What if my command has unsupported options?","acceptedAnswer":{"@type":"Answer","text":"Unknown options are ignored and listed as warnings, so you can see what was skipped."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="brand" href="/" aria-label="DocuFormat home"><span class="logo" aria-hidden="true">{ }</span>DocuFormat</a>
+<nav class="nav" aria-label="Main">
+<details class="menu"><summary>Formats</summary><div class="menu-panel"><a href="/json-formatter/">JSON</a><a href="/yaml-formatter/">YAML</a><a href="/xml-formatter/">XML</a><a href="/csv-formatter/">CSV</a><a href="/sql-formatter/">SQL</a><a href="/curl-formatter/">cURL</a><a href="/shell-command-formatter/">Shell</a></div></details>
+<a href="/features/">Features</a>
+<a href="/privacy/">Privacy</a>
+</nav>
+<a class="button small" href="/coming-soon/">Coming soon ↗</a>
+</div>
+</header>
+<main id="main">
+<article class="wrap page">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">DocuFormat</a><span aria-hidden="true">/</span><span>cURL Formatter</span></nav>
+<p class="eyebrow">cURL</p>
+<h1>cURL command formatter</h1>
+<p class="lead">cURL commands copied from docs, browser dev tools or a teammate’s message are often one unreadable line. DocuFormat lays them out clearly and shows the request they describe.</p>
+<div class="cta-row"><a class="button" href="/coming-soon/">Coming soon ↗</a><a class="button secondary" href="#example">See an example ↓</a></div>
+<section id="example" class="example" aria-label="Example"><div class="before-after"><div><figure class="editor" role="group" aria-label="Input example">
+<figcaption class="editor-bar"><span class="editor-file">command.sh</span><span class="chip ">Detected: cURL ✓</span></figcaption>
+<pre class="code" tabindex="0"><code><span class="l"><span class="t-kw">curl</span> <span class="t-k">-X</span> POST <span class="t-u">https://api.example.com/users</span> <span class="t-k">-H</span> <span class="t-s">'Content-Type: application/json'</span> <span class="t-k">-H</span> <span class="t-s">'Authorization: Bearer YOUR_TOKEN'</span> <span class="t-k">-d</span> <span class="t-s">'{"name":"Steve","active":true}'</span></span></code></pre>
+</figure></div><div class="arrow" aria-hidden="true">→</div><div><figure class="editor" role="group" aria-label="Output example">
+<figcaption class="editor-bar"><span class="editor-file">output.sh</span></figcaption>
+<pre class="code" tabindex="0"><code><span class="l"><span class="t-kw">curl</span> <span class="t-p">\</span></span><span class="l">  <span class="t-u">https://api.example.com/users</span> <span class="t-p">\</span></span><span class="l">  <span class="t-k">-H</span> <span class="t-s">'Content-Type: application/json'</span> <span class="t-p">\</span></span><span class="l">  <span class="t-k">-H</span> <span class="t-s">'Authorization: Bearer YOUR_TOKEN'</span> <span class="t-p">\</span></span><span class="l">  <span class="t-k">--data-raw</span> '{</span><span class="l">  <span class="t-s">"name"</span>: <span class="t-s">"Steve"</span>,</span><span class="l">  <span class="t-s">"active"</span>: true</span><span class="l">}</span><span class="l">'</span></code></pre>
+<div class="editor-foot ok">✓ Parsed locally · never executed</div>
+</figure></div></div></section>
+<section class="prose"><h2>One option per line</h2>
+<p>The formatter puts the URL and each option on its own line with a trailing backslash, the way people write cURL by hand, and pretty-prints a JSON or XML request body so it is readable too. Because POST is implied by a body, the explicit <code>-X POST</code> is dropped; the method is still shown in the Request view. A compact one-line form is available through Minify.</p></section>
+<section class="prose"><h2>See the request, not the flags</h2>
+<p>Switch to the <strong>Request</strong> view to see the same command broken down into its parts: method, URL, query parameters, headers, authentication, cookies and body. It is quicker than decoding <code>-H</code>, <code>-u</code> and <code>-d</code> by eye. The <a href="/curl-parser/">cURL parser</a> page covers that view in detail.</p></section>
+<section class="prose"><h2>Not every command is cURL</h2>
+<p>If what you pasted is a Docker, kubectl, Git or other shell command rather than an HTTP request, use the <a href="/shell-command-formatter/">shell command formatter</a>. It converts long commands between single-line and multi-line forms. cURL is a shell command too, so it works there as well, but this page adds the HTTP-level view.</p></section>
+<section class="prose"><h2>Never executed</h2>
+<p>A cURL command is parsed as text. DocuFormat never runs it and never makes the request, so you can inspect commands you do not fully trust, including ones that contain shell operators. Anything after a shell operator such as <code>|</code> or <code>&amp;&amp;</code> is ignored and flagged.</p></section>
+<section class="prose"><h2>Mind the secrets</h2>
+<p>Authorization headers and tokens are shown as written, not masked. Formatting is local, but if you choose an AI action, the command is sent to the AI provider, so remove real credentials first.</p></section>
+<section class="prose"><h2>Questions, answered</h2><div class="faq-list"><details><summary>Does DocuFormat send the request?</summary><p>No. cURL commands are parsed and displayed only. Nothing is executed or sent.</p></details><details><summary>Can it convert cURL to fetch or Python?</summary><p>Not today. DocuFormat formats and explains cURL commands; conversion to other languages is not currently offered.</p></details><details><summary>What if my command has unsupported options?</summary><p>Unknown options are ignored and listed as warnings, so you can see what was skipped.</p></details></div></section>
+<section class="related"><h2>Keep reading</h2><ul><li><a href="/shell-command-formatter/">Shell Command Formatter</a></li><li><a href="/curl-parser/">cURL Parser</a></li><li><a href="/curl-explainer/">cURL Explainer</a></li><li><a href="/json-formatter/">JSON Formatter</a></li><li><a href="/features/">Everything DocuFormat can do</a></li><li><a href="/privacy/">How DocuFormat handles your data</a></li></ul>
+<p class="other-formats">Other formats: <a href="/json-formatter/">JSON</a> · <a href="/yaml-formatter/">YAML</a> · <a href="/xml-formatter/">XML</a> · <a href="/csv-formatter/">CSV</a> · <a href="/sql-formatter/">SQL</a> · <a href="/shell-command-formatter/">Shell</a></p></section>
+</article>
+<section class="closing"><div class="wrap"><h2>Try the cURL formatter on your own input.</h2><p>Paste it, format it, and fix it if it is broken, once DocuFormat opens.</p><div class="cta-row"><a class="button" href="/coming-soon/">Coming soon ↗</a></div></div></section>
+</main>
+<footer class="site-footer">
+<div class="wrap foot">
+<div class="foot-brand"><a class="brand" href="/"><span class="logo" aria-hidden="true">{ }</span>DocuFormat</a><p>Format. Validate. Fix. Explain.</p></div>
+<div><h2>Product</h2><ul><li><a href="/json-formatter/">Formatter</a></li><li><a href="/ai-json-fixer/">AI Fix</a></li><li><a href="/curl-explainer/">Explain</a></li></ul></div>
+<div><h2>Formats</h2><ul><li><a href="/json-formatter/">JSON Formatter</a></li><li><a href="/yaml-formatter/">YAML Formatter</a></li><li><a href="/xml-formatter/">XML Formatter</a></li><li><a href="/csv-formatter/">CSV Formatter</a></li><li><a href="/sql-formatter/">SQL Formatter</a></li><li><a href="/curl-formatter/">cURL Formatter</a></li><li><a href="/shell-command-formatter/">Shell Formatter</a></li></ul></div>
+<div><h2>Resources</h2><ul><li><a href="/features/">Features</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/about/">About</a></li><li><a href="/coming-soon/">Get updates</a></li></ul></div>
+</div>
+<div class="wrap legal"><span>© 2026 DocuFormat</span></div>
+</footer>
+</body>
+</html>

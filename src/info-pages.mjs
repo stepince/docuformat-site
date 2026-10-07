@@ -1,6 +1,6 @@
 // Features, Privacy, About and 404 pages.
 import { appLink, breadcrumbLd, closingCta, esc, faqLd, faqList, layout } from './components.mjs';
-import { tools } from '../content/tools.mjs';
+import { tools } from './content/tools.mjs';
 import { FORM_URL, FORMATS, NAME, SITE_URL } from './site.mjs';
 
 const shell = ({ path, nav, eyebrow, h1, lead, sections, faq, cta = true, title, description }) => {

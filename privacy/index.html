@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy: How DocuFormat Handles Your Developer Data</title>
+<meta name="description" content="What runs locally, what is sent to an AI provider and when. Formatting, validation and detection are deterministic; AI is used only after you click AI Fix or Explain.">
+<link rel="canonical" href="https://docuformat.com/privacy/">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DocuFormat">
+<meta property="og:title" content="Privacy: How DocuFormat Handles Your Developer Data">
+<meta property="og:description" content="What runs locally, what is sent to an AI provider and when. Formatting, validation and detection are deterministic; AI is used only after you click AI Fix or Explain.">
+<meta property="og:url" content="https://docuformat.com/privacy/">
+<meta property="og:image" content="https://docuformat.com/assets/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DocuFormat. Format. Validate. Fix. Explain.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Privacy: How DocuFormat Handles Your Developer Data">
+<meta name="twitter:description" content="What runs locally, what is sent to an AI provider and when. Formatting, validation and detection are deterministic; AI is used only after you click AI Fix or Explain.">
+<meta name="twitter:image" content="https://docuformat.com/assets/social.png">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Your developer data deserves careful handling","description":"What runs locally, what is sent to an AI provider and when. Formatting, validation and detection are deterministic; AI is used only after you click AI Fix or Explain.","url":"https://docuformat.com/privacy/"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"DocuFormat","item":"https://docuformat.com/"},{"@type":"ListItem","position":2,"name":"Privacy","item":"https://docuformat.com/privacy/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does my data ever leave my browser?","acceptedAnswer":{"@type":"Answer","text":"Not for formatting, validation, minifying or format detection. It leaves your browser for an AI provider only after you click AI Fix or Explain."}},{"@type":"Question","name":"Does DocuFormat run my shell commands, SQL or cURL?","acceptedAnswer":{"@type":"Answer","text":"No. They are treated as text and are never executed."}},{"@type":"Question","name":"Can I use DocuFormat without AI?","acceptedAnswer":{"@type":"Answer","text":"Yes. Everything except AI Fix and Explain works without it."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="brand" href="/" aria-label="DocuFormat home"><span class="logo" aria-hidden="true">{ }</span>DocuFormat</a>
+<nav class="nav" aria-label="Main">
+<details class="menu"><summary>Formats</summary><div class="menu-panel"><a href="/json-formatter/">JSON</a><a href="/yaml-formatter/">YAML</a><a href="/xml-formatter/">XML</a><a href="/csv-formatter/">CSV</a><a href="/sql-formatter/">SQL</a><a href="/curl-formatter/">cURL</a><a href="/shell-command-formatter/">Shell</a></div></details>
+<a href="/features/">Features</a>
+<a href="/privacy/">Privacy</a>
+</nav>
+<a class="button small" href="/coming-soon/">Coming soon ↗</a>
+</div>
+</header>
+<main id="main">
+<article class="wrap page">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">DocuFormat</a><span aria-hidden="true">/</span><span>Privacy</span></nav>
+<p class="eyebrow">PRIVACY</p>
+<h1>Your developer data deserves careful handling</h1>
+<p class="lead">Pasted JSON, SQL, cURL and shell commands often contain tokens, hostnames and customer data. This page describes exactly what DocuFormat does with it.</p>
+<div class="cta-row"><a class="button" href="/coming-soon/">Coming soon ↗</a></div>
+<section class="prose"><h2>What happens without AI</h2>
+<p>Format detection, parsing, validation, formatting and minifying are implemented as deterministic code that runs in your browser. No AI is involved in any of them, and using them does not send your input to an AI provider.</p>
+<p>SQL, cURL and shell commands are treated as text. <strong>DocuFormat formats shell commands. It does not execute them.</strong> It never executes a pasted SQL statement, never runs a pasted cURL command or makes the request it describes, and never runs a pasted shell command.</p></section>
+<section class="prose"><h2>What happens when you use AI</h2>
+<ul>
+<li>AI only runs when you click <strong>AI Fix</strong> or <strong>Explain</strong>.</li>
+<li>The first time in a session, DocuFormat shows a notice that your content will be sent to an external AI provider and asks you to confirm.</li>
+<li>The request goes from your browser to DocuFormat’s server, which forwards it to the AI provider (currently Anthropic). Your content, the format, any local validation messages and, for SQL, the chosen dialect are included.</li>
+<li>Secrets are <strong>not</strong> redacted. Remove tokens, passwords and keys before using an AI action.</li>
+<li>AI requests are limited to 512 KB.</li>
+</ul></section>
+<section class="prose"><h2>What the server records</h2>
+<p>DocuFormat’s server is built so that, for AI requests, it logs only the method, route, response status, duration and the size of the request body. Request bodies, headers and upstream error bodies are not logged. Error messages returned to the browser do not echo your content.</p>
+<p>What the AI provider does with data it receives is governed by that provider’s own terms and policies.</p></section>
+<section class="prose"><h2>This website</h2>
+<p>This marketing site is static pages. It sets no cookies, loads no third-party scripts and includes no analytics.</p></section>
+<section class="prose"><h2>Questions, answered</h2><div class="faq-list"><details><summary>Does my data ever leave my browser?</summary><p>Not for formatting, validation, minifying or format detection. It leaves your browser for an AI provider only after you click AI Fix or Explain.</p></details><details><summary>Does DocuFormat run my shell commands, SQL or cURL?</summary><p>No. They are treated as text and are never executed.</p></details><details><summary>Can I use DocuFormat without AI?</summary><p>Yes. Everything except AI Fix and Explain works without it.</p></details></div></section>
+</article>
+<section class="closing"><div class="wrap"><h2>Paste it. Fix it. Move on.</h2><p>DocuFormat is not open to the public yet.</p><div class="cta-row"><a class="button" href="/coming-soon/">Coming soon ↗</a></div></div></section>
+</main>
+<footer class="site-footer">
+<div class="wrap foot">
+<div class="foot-brand"><a class="brand" href="/"><span class="logo" aria-hidden="true">{ }</span>DocuFormat</a><p>Format. Validate. Fix. Explain.</p></div>
+<div><h2>Product</h2><ul><li><a href="/json-formatter/">Formatter</a></li><li><a href="/ai-json-fixer/">AI Fix</a></li><li><a href="/curl-explainer/">Explain</a></li></ul></div>
+<div><h2>Formats</h2><ul><li><a href="/json-formatter/">JSON Formatter</a></li><li><a href="/yaml-formatter/">YAML Formatter</a></li><li><a href="/xml-formatter/">XML Formatter</a></li><li><a href="/csv-formatter/">CSV Formatter</a></li><li><a href="/sql-formatter/">SQL Formatter</a></li><li><a href="/curl-formatter/">cURL Formatter</a></li><li><a href="/shell-command-formatter/">Shell Formatter</a></li></ul></div>
+<div><h2>Resources</h2><ul><li><a href="/features/">Features</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/about/">About</a></li><li><a href="/coming-soon/">Get updates</a></li></ul></div>
+</div>
+<div class="wrap legal"><span>© 2026 DocuFormat</span></div>
+</footer>
+</body>
+</html>

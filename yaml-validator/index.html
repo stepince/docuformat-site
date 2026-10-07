@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YAML Validator: Find Indentation and Syntax Errors | DocuFormat</title>
+<meta name="description" content="Validate YAML and locate indentation, tab and syntax errors by line and column. A deterministic local parser does the checking; AI Fix is optional.">
+<link rel="canonical" href="https://docuformat.com/yaml-validator/">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DocuFormat">
+<meta property="og:title" content="YAML Validator: Find Indentation and Syntax Errors | DocuFormat">
+<meta property="og:description" content="Validate YAML and locate indentation, tab and syntax errors by line and column. A deterministic local parser does the checking; AI Fix is optional.">
+<meta property="og:url" content="https://docuformat.com/yaml-validator/">
+<meta property="og:image" content="https://docuformat.com/assets/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DocuFormat. Format. Validate. Fix. Explain.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="YAML Validator: Find Indentation and Syntax Errors | DocuFormat">
+<meta name="twitter:description" content="Validate YAML and locate indentation, tab and syntax errors by line and column. A deterministic local parser does the checking; AI Fix is optional.">
+<meta name="twitter:image" content="https://docuformat.com/assets/social.png">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"YAML validator","description":"Validate YAML and locate indentation, tab and syntax errors by line and column. A deterministic local parser does the checking; AI Fix is optional.","url":"https://docuformat.com/yaml-validator/","isPartOf":{"@type":"WebSite","name":"DocuFormat","url":"https://docuformat.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"DocuFormat","item":"https://docuformat.com/"},{"@type":"ListItem","position":2,"name":"YAML Validator","item":"https://docuformat.com/yaml-validator/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it validate Kubernetes or CI schemas?","acceptedAnswer":{"@type":"Answer","text":"No. It checks that the file is valid YAML, not that its keys match any particular tool’s schema."}},{"@type":"Question","name":"Why does the error point to the wrong line?","acceptedAnswer":{"@type":"Answer","text":"Parsers report where they detect the problem, which can be after the actual mistake. Check the lines above the reported one."}},{"@type":"Question","name":"Are tabs allowed?","acceptedAnswer":{"@type":"Answer","text":"No. YAML indentation must use spaces."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="brand" href="/" aria-label="DocuFormat home"><span class="logo" aria-hidden="true">{ }</span>DocuFormat</a>
+<nav class="nav" aria-label="Main">
+<details class="menu"><summary>Formats</summary><div class="menu-panel"><a href="/json-formatter/">JSON</a><a href="/yaml-formatter/">YAML</a><a href="/xml-formatter/">XML</a><a href="/csv-formatter/">CSV</a><a href="/sql-formatter/">SQL</a><a href="/curl-formatter/">cURL</a><a href="/shell-command-formatter/">Shell</a></div></details>
+<a href="/features/">Features</a>
+<a href="/privacy/">Privacy</a>
+</nav>
+<a class="button small" href="/coming-soon/">Coming soon ↗</a>
+</div>
+</header>
+<main id="main">
+<article class="wrap page">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">DocuFormat</a><span aria-hidden="true">/</span><span>YAML Validator</span></nav>
+<p class="eyebrow">YAML</p>
+<h1>YAML validator</h1>
+<p class="lead">YAML errors are usually one misplaced space. DocuFormat parses the file, reports where it stops making sense, and highlights the line.</p>
+<div class="cta-row"><a class="button" href="/coming-soon/">Coming soon ↗</a><a class="button secondary" href="#example">See an example ↓</a></div>
+<section id="example" class="example" aria-label="Example"><div class="single"><figure class="editor" role="group" aria-label="Input example">
+<figcaption class="editor-bar"><span class="editor-file">app.yaml</span><span class="chip ">Detected: YAML ✓</span></figcaption>
+<pre class="code" tabindex="0"><code><span class="l"><span class="t-k">server</span><span class="t-p">:</span></span><span class="l">  <span class="t-k">host</span><span class="t-p">:</span> localhost</span><span class="l"><mark class="err">   <span class="t-k">port</span><span class="t-p">:</span> <span class="t-n">8080</span></mark></span></code></pre>
+<div class="editor-foot bad">✗ line 2: Nested mappings are not allowed in compact mappings</div>
+</figure></div></section>
+<section class="prose"><h2>Where YAML usually goes wrong</h2>
+<ul><li><strong>Inconsistent indentation.</strong> A key indented one space further than its siblings turns into a parse error.</li><li><strong>Tabs.</strong> YAML indentation must use spaces.</li><li><strong>Duplicate keys.</strong> The same key twice in one mapping is rejected.</li><li><strong>Unquoted special characters.</strong> A value containing <code>: </code> or starting with <code>*</code>, <code>&amp;</code> or <code>@</code> needs quotes.</li><li><strong>Unclosed flow collections.</strong> A <code>[</code> or <code>{</code> that never closes.</li></ul></section>
+<section class="prose"><h2>Errors with positions</h2>
+<p>Each reported problem includes a line and column where the parser noticed it. Note that the position is where the parser <em>noticed</em> the issue, which can be a line or two after the real mistake, so read the lines just above it too.</p></section>
+<section class="prose"><h2>Deterministic, then optional AI</h2>
+<p>Parsing is done locally with a standard YAML library. If the cause still is not clear, <strong>Explain</strong> can describe what is wrong in plain language, and <strong>AI Fix</strong> can propose a corrected file. Both are explicit, and neither is needed to validate. Once the file parses, run it through the <a href="/yaml-formatter/">YAML formatter</a>.</p></section>
+<section class="prose"><h2>Questions, answered</h2><div class="faq-list"><details><summary>Does it validate Kubernetes or CI schemas?</summary><p>No. It checks that the file is valid YAML, not that its keys match any particular tool’s schema.</p></details><details><summary>Why does the error point to the wrong line?</summary><p>Parsers report where they detect the problem, which can be after the actual mistake. Check the lines above the reported one.</p></details><details><summary>Are tabs allowed?</summary><p>No. YAML indentation must use spaces.</p></details></div></section>
+<section class="related"><h2>Keep reading</h2><ul><li><a href="/yaml-formatter/">YAML Formatter</a></li><li><a href="/json-validator/">JSON Validator</a></li><li><a href="/xml-validator/">XML Validator</a></li><li><a href="/ai-json-fixer/">AI JSON Fixer</a></li><li><a href="/features/">Everything DocuFormat can do</a></li><li><a href="/privacy/">How DocuFormat handles your data</a></li></ul>
+<p class="other-formats">Other formats: <a href="/json-formatter/">JSON</a> · <a href="/xml-formatter/">XML</a> · <a href="/csv-formatter/">CSV</a> · <a href="/sql-formatter/">SQL</a> · <a href="/curl-formatter/">cURL</a> · <a href="/shell-command-formatter/">Shell</a></p></section>
+</article>
+<section class="closing"><div class="wrap"><h2>Try the YAML formatter on your own input.</h2><p>Paste it, format it, and fix it if it is broken, once DocuFormat opens.</p><div class="cta-row"><a class="button" href="/coming-soon/">Coming soon ↗</a></div></div></section>
+</main>
+<footer class="site-footer">
+<div class="wrap foot">
+<div class="foot-brand"><a class="brand" href="/"><span class="logo" aria-hidden="true">{ }</span>DocuFormat</a><p>Format. Validate. Fix. Explain.</p></div>
+<div><h2>Product</h2><ul><li><a href="/json-formatter/">Formatter</a></li><li><a href="/ai-json-fixer/">AI Fix</a></li><li><a href="/curl-explainer/">Explain</a></li></ul></div>
+<div><h2>Formats</h2><ul><li><a href="/json-formatter/">JSON Formatter</a></li><li><a href="/yaml-formatter/">YAML Formatter</a></li><li><a href="/xml-formatter/">XML Formatter</a></li><li><a href="/csv-formatter/">CSV Formatter</a></li><li><a href="/sql-formatter/">SQL Formatter</a></li><li><a href="/curl-formatter/">cURL Formatter</a></li><li><a href="/shell-command-formatter/">Shell Formatter</a></li></ul></div>
+<div><h2>Resources</h2><ul><li><a href="/features/">Features</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/about/">About</a></li><li><a href="/coming-soon/">Get updates</a></li></ul></div>
+</div>
+<div class="wrap legal"><span>© 2026 DocuFormat</span></div>
+</footer>
+</body>
+</html>

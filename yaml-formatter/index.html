@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YAML Formatter: Clean Up and Validate YAML Online | DocuFormat</title>
+<meta name="description" content="Format YAML with consistent indentation and catch syntax problems at the same time. Handles multi-document files; runs locally in your browser with optional AI repair.">
+<link rel="canonical" href="https://docuformat.com/yaml-formatter/">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DocuFormat">
+<meta property="og:title" content="YAML Formatter: Clean Up and Validate YAML Online | DocuFormat">
+<meta property="og:description" content="Format YAML with consistent indentation and catch syntax problems at the same time. Handles multi-document files; runs locally in your browser with optional AI repair.">
+<meta property="og:url" content="https://docuformat.com/yaml-formatter/">
+<meta property="og:image" content="https://docuformat.com/assets/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DocuFormat. Format. Validate. Fix. Explain.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="YAML Formatter: Clean Up and Validate YAML Online | DocuFormat">
+<meta name="twitter:description" content="Format YAML with consistent indentation and catch syntax problems at the same time. Handles multi-document files; runs locally in your browser with optional AI repair.">
+<meta name="twitter:image" content="https://docuformat.com/assets/social.png">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"YAML formatter","description":"Format YAML with consistent indentation and catch syntax problems at the same time. Handles multi-document files; runs locally in your browser with optional AI repair.","url":"https://docuformat.com/yaml-formatter/","isPartOf":{"@type":"WebSite","name":"DocuFormat","url":"https://docuformat.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"DocuFormat","item":"https://docuformat.com/"},{"@type":"ListItem","position":2,"name":"YAML Formatter","item":"https://docuformat.com/yaml-formatter/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does it support multiple YAML documents?","acceptedAnswer":{"@type":"Answer","text":"Yes. Documents separated by --- are formatted individually."}},{"@type":"Question","name":"Can it minify YAML?","acceptedAnswer":{"@type":"Answer","text":"No. Minifying does not make sense for indentation-based YAML, so that option is not offered."}},{"@type":"Question","name":"Does my YAML leave my browser?","acceptedAnswer":{"@type":"Answer","text":"Not for formatting or validation. Content is only sent to an AI provider if you click AI Fix or Explain."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="brand" href="/" aria-label="DocuFormat home"><span class="logo" aria-hidden="true">{ }</span>DocuFormat</a>
+<nav class="nav" aria-label="Main">
+<details class="menu"><summary>Formats</summary><div class="menu-panel"><a href="/json-formatter/">JSON</a><a href="/yaml-formatter/">YAML</a><a href="/xml-formatter/">XML</a><a href="/csv-formatter/">CSV</a><a href="/sql-formatter/">SQL</a><a href="/curl-formatter/">cURL</a><a href="/shell-command-formatter/">Shell</a></div></details>
+<a href="/features/">Features</a>
+<a href="/privacy/">Privacy</a>
+</nav>
+<a class="button small" href="/coming-soon/">Coming soon ↗</a>
+</div>
+</header>
+<main id="main">
+<article class="wrap page">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">DocuFormat</a><span aria-hidden="true">/</span><span>YAML Formatter</span></nav>
+<p class="eyebrow">YAML</p>
+<h1>YAML formatter</h1>
+<p class="lead">Tidy YAML configuration files and normalize their indentation and spacing. If the file does not parse, DocuFormat tells you where, instead of guessing.</p>
+<div class="cta-row"><a class="button" href="/coming-soon/">Coming soon ↗</a><a class="button secondary" href="#example">See an example ↓</a></div>
+<section id="example" class="example" aria-label="Example"><div class="before-after"><div><figure class="editor" role="group" aria-label="Input example">
+<figcaption class="editor-bar"><span class="editor-file">config.yaml</span><span class="chip ">Detected: YAML ✓</span></figcaption>
+<pre class="code" tabindex="0"><code><span class="l"><span class="t-k">server</span><span class="t-p">:</span></span><span class="l">    <span class="t-k">host</span><span class="t-p">:</span> localhost</span><span class="l">    <span class="t-k">port</span><span class="t-p">:</span>   <span class="t-n">8080</span></span><span class="l"><span class="t-k">features</span><span class="t-p">:</span> <span class="t-p">[</span>auth<span class="t-p">,</span>   logging<span class="t-p">]</span></span><span class="l"><span class="t-k">list</span><span class="t-p">:</span></span><span class="l"><span class="t-p">-</span> alpha</span><span class="l"><span class="t-p">-</span>   beta</span></code></pre>
+</figure></div><div class="arrow" aria-hidden="true">→</div><div><figure class="editor" role="group" aria-label="Output example">
+<figcaption class="editor-bar"><span class="editor-file">output.yaml</span></figcaption>
+<pre class="code" tabindex="0"><code><span class="l"><span class="t-k">server</span><span class="t-p">:</span></span><span class="l">  <span class="t-k">host</span><span class="t-p">:</span> localhost</span><span class="l">  <span class="t-k">port</span><span class="t-p">:</span> <span class="t-n">8080</span></span><span class="l"><span class="t-k">features</span><span class="t-p">:</span> <span class="t-p">[</span>auth<span class="t-p">,</span> logging<span class="t-p">]</span></span><span class="l"><span class="t-k">list</span><span class="t-p">:</span></span><span class="l"><span class="t-p">  -</span> alpha</span><span class="l"><span class="t-p">  -</span> beta</span></code></pre>
+<div class="editor-foot ok">✓ Valid YAML · formatted locally</div>
+</figure></div></div></section>
+<section class="prose"><h2>What gets cleaned up</h2>
+<p>DocuFormat parses your YAML and writes it back out in a consistent style: two-space indentation, list items indented under their key, and no stray padding around values. Inline collections such as <code>[auth, logging]</code> stay inline, tidied but not restructured.</p></section>
+<section class="prose"><h2>Multi-document files</h2>
+<p>Files with several documents separated by <code>---</code>, common in Kubernetes manifests, are parsed and formatted document by document, and the separators are kept.</p></section>
+<section class="prose"><h2>Review the output</h2>
+<p>Because formatting re-serializes the parsed document rather than editing text in place, it is worth glancing over the result, especially for files that rely on a particular style such as quoting, anchors or long folded strings. Compare it with the original before committing.</p></section>
+<section class="prose"><h2>Why format YAML at all?</h2>
+<p>In YAML, indentation <em>is</em> the structure. A config that is consistently indented is easier to review, and mis-nested keys are easier to see. If the file is already broken, start with the <a href="/yaml-validator/">YAML validator</a>.</p></section>
+<section class="prose"><h2>Questions, answered</h2><div class="faq-list"><details><summary>Does it support multiple YAML documents?</summary><p>Yes. Documents separated by --- are formatted individually.</p></details><details><summary>Can it minify YAML?</summary><p>No. Minifying does not make sense for indentation-based YAML, so that option is not offered.</p></details><details><summary>Does my YAML leave my browser?</summary><p>Not for formatting or validation. Content is only sent to an AI provider if you click AI Fix or Explain.</p></details></div></section>
+<section class="related"><h2>Keep reading</h2><ul><li><a href="/yaml-validator/">YAML Validator</a></li><li><a href="/json-formatter/">JSON Formatter</a></li><li><a href="/ai-json-fixer/">AI JSON Fixer</a></li><li><a href="/xml-formatter/">XML Formatter</a></li><li><a href="/features/">Everything DocuFormat can do</a></li><li><a href="/privacy/">How DocuFormat handles your data</a></li></ul>
+<p class="other-formats">Other formats: <a href="/json-formatter/">JSON</a> · <a href="/xml-formatter/">XML</a> · <a href="/csv-formatter/">CSV</a> · <a href="/sql-formatter/">SQL</a> · <a href="/curl-formatter/">cURL</a> · <a href="/shell-command-formatter/">Shell</a></p></section>
+</article>
+<section class="closing"><div class="wrap"><h2>Try the YAML formatter on your own input.</h2><p>Paste it, format it, and fix it if it is broken, once DocuFormat opens.</p><div class="cta-row"><a class="button" href="/coming-soon/">Coming soon ↗</a></div></div></section>
+</main>
+<footer class="site-footer">
+<div class="wrap foot">
+<div class="foot-brand"><a class="brand" href="/"><span class="logo" aria-hidden="true">{ }</span>DocuFormat</a><p>Format. Validate. Fix. Explain.</p></div>
+<div><h2>Product</h2><ul><li><a href="/json-formatter/">Formatter</a></li><li><a href="/ai-json-fixer/">AI Fix</a></li><li><a href="/curl-explainer/">Explain</a></li></ul></div>
+<div><h2>Formats</h2><ul><li><a href="/json-formatter/">JSON Formatter</a></li><li><a href="/yaml-formatter/">YAML Formatter</a></li><li><a href="/xml-formatter/">XML Formatter</a></li><li><a href="/csv-formatter/">CSV Formatter</a></li><li><a href="/sql-formatter/">SQL Formatter</a></li><li><a href="/curl-formatter/">cURL Formatter</a></li><li><a href="/shell-command-formatter/">Shell Formatter</a></li></ul></div>
+<div><h2>Resources</h2><ul><li><a href="/features/">Features</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/about/">About</a></li><li><a href="/coming-soon/">Get updates</a></li></ul></div>
+</div>
+<div class="wrap legal"><span>© 2026 DocuFormat</span></div>
+</footer>
+</body>
+</html>

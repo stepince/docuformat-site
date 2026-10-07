@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI JSON Fixer: Repair Malformed JSON, Explained | DocuFormat</title>
+<meta name="description" content="How DocuFormat’s AI JSON fixer works: you click AI Fix, the model proposes a repair and explains what changed, and the result is re-validated locally before you use it.">
+<link rel="canonical" href="https://docuformat.com/ai-json-fixer/">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DocuFormat">
+<meta property="og:title" content="AI JSON Fixer: Repair Malformed JSON, Explained | DocuFormat">
+<meta property="og:description" content="How DocuFormat’s AI JSON fixer works: you click AI Fix, the model proposes a repair and explains what changed, and the result is re-validated locally before you use it.">
+<meta property="og:url" content="https://docuformat.com/ai-json-fixer/">
+<meta property="og:image" content="https://docuformat.com/assets/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DocuFormat. Format. Validate. Fix. Explain.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI JSON Fixer: Repair Malformed JSON, Explained | DocuFormat">
+<meta name="twitter:description" content="How DocuFormat’s AI JSON fixer works: you click AI Fix, the model proposes a repair and explains what changed, and the result is re-validated locally before you use it.">
+<meta name="twitter:image" content="https://docuformat.com/assets/social.png">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"AI JSON fixer","description":"How DocuFormat’s AI JSON fixer works: you click AI Fix, the model proposes a repair and explains what changed, and the result is re-validated locally before you use it.","url":"https://docuformat.com/ai-json-fixer/","isPartOf":{"@type":"WebSite","name":"DocuFormat","url":"https://docuformat.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"DocuFormat","item":"https://docuformat.com/"},{"@type":"ListItem","position":2,"name":"AI JSON Fixer","item":"https://docuformat.com/ai-json-fixer/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Does DocuFormat send my JSON to an AI automatically?","acceptedAnswer":{"@type":"Answer","text":"No. Content is only sent after you click AI Fix or Explain, and the first time you are asked to confirm."}},{"@type":"Question","name":"Is the AI-fixed JSON guaranteed valid?","acceptedAnswer":{"@type":"Answer","text":"No guarantee, which is why DocuFormat re-validates it locally and shows you the result before you use it."}},{"@type":"Question","name":"Which AI provider does it use?","acceptedAnswer":{"@type":"Answer","text":"The server forwards requests to an AI provider (currently Anthropic). The application shows which model is in use."}},{"@type":"Question","name":"Can I use it for formats other than JSON?","acceptedAnswer":{"@type":"Answer","text":"Yes. AI Fix and Explain work for YAML, XML, CSV, SQL, cURL and shell commands as well."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="brand" href="/" aria-label="DocuFormat home"><span class="logo" aria-hidden="true">{ }</span>DocuFormat</a>
+<nav class="nav" aria-label="Main">
+<details class="menu"><summary>Formats</summary><div class="menu-panel"><a href="/json-formatter/">JSON</a><a href="/yaml-formatter/">YAML</a><a href="/xml-formatter/">XML</a><a href="/csv-formatter/">CSV</a><a href="/sql-formatter/">SQL</a><a href="/curl-formatter/">cURL</a><a href="/shell-command-formatter/">Shell</a></div></details>
+<a href="/features/">Features</a>
+<a href="/privacy/">Privacy</a>
+</nav>
+<a class="button small" href="/coming-soon/">Coming soon ↗</a>
+</div>
+</header>
+<main id="main">
+<article class="wrap page">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">DocuFormat</a><span aria-hidden="true">/</span><span>AI JSON Fixer</span></nav>
+<p class="eyebrow">JSON</p>
+<h1>AI JSON fixer</h1>
+<p class="lead">An AI fixer is only useful if you can trust what it does. Here is exactly how DocuFormat uses AI on broken JSON, what stays deterministic, and what you stay in control of.</p>
+<div class="cta-row"><a class="button" href="/coming-soon/">Coming soon ↗</a><a class="button secondary" href="#example">See an example ↓</a></div>
+<section id="example" class="example" aria-label="Example"><div class="before-after"><div><figure class="editor" role="group" aria-label="Input example">
+<figcaption class="editor-bar"><span class="editor-file">input.json</span><span class="chip ">Detected: JSON ✗</span></figcaption>
+<pre class="code" tabindex="0"><code><span class="l"><span class="t-p">{</span></span><span class="l">  <span class="t-k">"user"</span><span class="t-p">:</span> <span class="t-p">{</span></span><span class="l">    <span class="t-k">"id"</span><span class="t-p">:</span> <span class="t-n">7</span><span class="t-p">,</span></span><span class="l">    <span class="t-k">"roles"</span><span class="t-p">:</span> <span class="t-p">[</span><span class="t-s">"admin"</span><span class="t-p">,</span> <span class="t-s">"dev"</span></span><span class="l">  <span class="t-p">}</span><span class="t-p">,</span></span><span class="l">  <span class="t-k">"active"</span><span class="t-p">:</span> <span class="t-b">true</span></span><span class="l"><span class="t-p">}</span></span></code></pre>
+<div class="editor-foot bad">✗ 1 error · AI Fix available</div>
+</figure></div><div class="arrow" aria-hidden="true">→</div><div><figure class="editor" role="group" aria-label="Output example">
+<figcaption class="editor-bar"><span class="editor-file">suggested.json</span><span class="chip ai">AI suggestion</span></figcaption>
+<pre class="code" tabindex="0"><code><span class="l"><span class="t-p">{</span></span><span class="l">  <span class="t-k">"user"</span><span class="t-p">:</span> <span class="t-p">{</span></span><span class="l">    <span class="t-k">"id"</span><span class="t-p">:</span> <span class="t-n">7</span><span class="t-p">,</span></span><span class="l">    <span class="t-k">"roles"</span><span class="t-p">:</span> <span class="t-p">[</span><span class="t-s">"admin"</span><span class="t-p">,</span> <span class="t-s">"dev"</span><span class="t-p">]</span></span><span class="l">  <span class="t-p">}</span><span class="t-p">,</span></span><span class="l">  <span class="t-k">"active"</span><span class="t-p">:</span> <span class="t-b">true</span></span><span class="l"><span class="t-p">}</span></span></code></pre>
+<div class="editor-foot ok">✓ Passes local re-validation</div>
+</figure></div></div></section>
+<section class="prose"><h2>Deterministic first, AI second</h2>
+<p>DocuFormat detects the format, parses, validates and pretty-prints without a model. The AI step is separate and optional. When validation fails, the local diagnostics (line, column, message) are passed along with your input so the model can target the real problem instead of guessing.</p></section>
+<section class="prose"><h2>What happens when you click AI Fix</h2>
+<ol><li>You click <strong>AI Fix</strong>. Nothing is sent before this.</li><li>The first time in a session, DocuFormat shows a notice that your content will be sent to an external AI provider, and asks you to confirm.</li><li>The request goes through DocuFormat’s server to the AI provider.</li><li>You get a proposed correction, a plain-language explanation and a list of problems found.</li><li>DocuFormat validates the proposal locally and shows the result.</li><li>You decide: <strong>Use as input</strong>, <strong>Format suggestion</strong> or <strong>Discard</strong>.</li></ol></section>
+<section class="prose"><h2>What it is told to do</h2>
+<p>The repair instructions tell the model to treat your content as data, not instructions; to preserve the original intent; to make the smallest changes needed; and not to invent data or remove content unless required for validity.</p>
+<p><strong>Secrets are not redacted.</strong> Tokens and keys in your input are passed as written, so remove anything sensitive before using an AI action.</p></section>
+<section class="prose"><h2>Limits worth knowing</h2>
+<ul><li>AI requests accept up to 512 KB of input.</li><li>AI output can be wrong. That is why it is never applied automatically and is always re-validated.</li><li>AI Fix needs the application’s AI provider to be configured; basic formatting and validation do not.</li></ul>
+<p>For the plain formatting side, see the <a href="/json-formatter/">JSON formatter</a>; for common causes of invalid JSON, the <a href="/json-fixer/">JSON fixer</a>.</p></section>
+<section class="prose"><h2>Questions, answered</h2><div class="faq-list"><details><summary>Does DocuFormat send my JSON to an AI automatically?</summary><p>No. Content is only sent after you click AI Fix or Explain, and the first time you are asked to confirm.</p></details><details><summary>Is the AI-fixed JSON guaranteed valid?</summary><p>No guarantee, which is why DocuFormat re-validates it locally and shows you the result before you use it.</p></details><details><summary>Which AI provider does it use?</summary><p>The server forwards requests to an AI provider (currently Anthropic). The application shows which model is in use.</p></details><details><summary>Can I use it for formats other than JSON?</summary><p>Yes. AI Fix and Explain work for YAML, XML, CSV, SQL, cURL and shell commands as well.</p></details></div></section>
+<section class="related"><h2>Keep reading</h2><ul><li><a href="/json-fixer/">JSON Fixer</a></li><li><a href="/json-validator/">JSON Validator</a></li><li><a href="/sql-fixer/">SQL Fixer</a></li><li><a href="/curl-explainer/">cURL Explainer</a></li><li><a href="/features/">Everything DocuFormat can do</a></li><li><a href="/privacy/">How DocuFormat handles your data</a></li></ul>
+<p class="other-formats">Other formats: <a href="/yaml-formatter/">YAML</a> · <a href="/xml-formatter/">XML</a> · <a href="/csv-formatter/">CSV</a> · <a href="/sql-formatter/">SQL</a> · <a href="/curl-formatter/">cURL</a> · <a href="/shell-command-formatter/">Shell</a></p></section>
+</article>
+<section class="closing"><div class="wrap"><h2>Try the JSON formatter on your own input.</h2><p>Paste it, format it, and fix it if it is broken, once DocuFormat opens.</p><div class="cta-row"><a class="button" href="/coming-soon/">Coming soon ↗</a></div></div></section>
+</main>
+<footer class="site-footer">
+<div class="wrap foot">
+<div class="foot-brand"><a class="brand" href="/"><span class="logo" aria-hidden="true">{ }</span>DocuFormat</a><p>Format. Validate. Fix. Explain.</p></div>
+<div><h2>Product</h2><ul><li><a href="/json-formatter/">Formatter</a></li><li><a href="/ai-json-fixer/">AI Fix</a></li><li><a href="/curl-explainer/">Explain</a></li></ul></div>
+<div><h2>Formats</h2><ul><li><a href="/json-formatter/">JSON Formatter</a></li><li><a href="/yaml-formatter/">YAML Formatter</a></li><li><a href="/xml-formatter/">XML Formatter</a></li><li><a href="/csv-formatter/">CSV Formatter</a></li><li><a href="/sql-formatter/">SQL Formatter</a></li><li><a href="/curl-formatter/">cURL Formatter</a></li><li><a href="/shell-command-formatter/">Shell Formatter</a></li></ul></div>
+<div><h2>Resources</h2><ul><li><a href="/features/">Features</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/about/">About</a></li><li><a href="/coming-soon/">Get updates</a></li></ul></div>
+</div>
+<div class="wrap legal"><span>© 2026 DocuFormat</span></div>
+</footer>
+</body>
+</html>

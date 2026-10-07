@@ -1,7 +1,7 @@
 // Shell / Bash command formatter landing page.
 // Written to the product brief before the feature existed in the app: re-verify every example and claim
 // once it ships (see README, "Shell re-verification"). Commands are only ever formatted, never executed.
-import { appLink, editor, esc } from '../lib/components.mjs';
+import { appLink, editor, esc } from '../components.mjs';
 
 const ex = (file, lang, code, extra = {}) => ({ file, lang, code, ...extra });
 const ed = (file, code, extra = {}) => editor({ file, lang: 'shell', code, ...extra });

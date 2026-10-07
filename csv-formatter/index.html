@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CSV Formatter &amp; Viewer: Validate and Inspect CSV | DocuFormat</title>
+<meta name="description" content="Detect the delimiter, preview CSV as a table and find rows with the wrong number of columns or broken quotes. Local, deterministic CSV checking with optional AI help.">
+<link rel="canonical" href="https://docuformat.com/csv-formatter/">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DocuFormat">
+<meta property="og:title" content="CSV Formatter &amp; Viewer: Validate and Inspect CSV | DocuFormat">
+<meta property="og:description" content="Detect the delimiter, preview CSV as a table and find rows with the wrong number of columns or broken quotes. Local, deterministic CSV checking with optional AI help.">
+<meta property="og:url" content="https://docuformat.com/csv-formatter/">
+<meta property="og:image" content="https://docuformat.com/assets/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DocuFormat. Format. Validate. Fix. Explain.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CSV Formatter &amp; Viewer: Validate and Inspect CSV | DocuFormat">
+<meta name="twitter:description" content="Detect the delimiter, preview CSV as a table and find rows with the wrong number of columns or broken quotes. Local, deterministic CSV checking with optional AI help.">
+<meta name="twitter:image" content="https://docuformat.com/assets/social.png">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"CSV formatter and table preview","description":"Detect the delimiter, preview CSV as a table and find rows with the wrong number of columns or broken quotes. Local, deterministic CSV checking with optional AI help.","url":"https://docuformat.com/csv-formatter/","isPartOf":{"@type":"WebSite","name":"DocuFormat","url":"https://docuformat.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"DocuFormat","item":"https://docuformat.com/"},{"@type":"ListItem","position":2,"name":"CSV Formatter","item":"https://docuformat.com/csv-formatter/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which delimiters are detected?","acceptedAnswer":{"@type":"Answer","text":"Comma, tab, semicolon and pipe."}},{"@type":"Question","name":"Can it minify CSV?","acceptedAnswer":{"@type":"Answer","text":"No. There is nothing to minify in CSV, so that option is not offered."}},{"@type":"Question","name":"How large a file can I paste?","acceptedAnswer":{"@type":"Answer","text":"Local parsing has no server limit, though very large inputs are limited by your browser. AI requests accept up to 512 KB."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="brand" href="/" aria-label="DocuFormat home"><span class="logo" aria-hidden="true">{ }</span>DocuFormat</a>
+<nav class="nav" aria-label="Main">
+<details class="menu"><summary>Formats</summary><div class="menu-panel"><a href="/json-formatter/">JSON</a><a href="/yaml-formatter/">YAML</a><a href="/xml-formatter/">XML</a><a href="/csv-formatter/">CSV</a><a href="/sql-formatter/">SQL</a><a href="/curl-formatter/">cURL</a><a href="/shell-command-formatter/">Shell</a></div></details>
+<a href="/features/">Features</a>
+<a href="/privacy/">Privacy</a>
+</nav>
+<a class="button small" href="/coming-soon/">Coming soon ↗</a>
+</div>
+</header>
+<main id="main">
+<article class="wrap page">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">DocuFormat</a><span aria-hidden="true">/</span><span>CSV Formatter</span></nav>
+<p class="eyebrow">CSV</p>
+<h1>CSV formatter and table preview</h1>
+<p class="lead">Paste CSV and see it as a table. DocuFormat detects the delimiter, notices when rows do not line up, and points at quoting problems.</p>
+<div class="cta-row"><a class="button" href="/coming-soon/">Coming soon ↗</a><a class="button secondary" href="#example">See an example ↓</a></div>
+<section id="example" class="example" aria-label="Example"><div class="single"><figure class="editor" role="group" aria-label="Input example">
+<figcaption class="editor-bar"><span class="editor-file">people.csv</span><span class="chip ">Detected: CSV ✓</span></figcaption>
+<pre class="code" tabindex="0"><code><span class="l">name<span class="t-p">;</span>age<span class="t-p">;</span>city</span><span class="l">Ada<span class="t-p">;</span><span class="t-n">36</span><span class="t-p">;</span>London</span><span class="l">Linus<span class="t-p">;</span><span class="t-n">54</span></span><span class="l">Grace<span class="t-p">;</span><span class="t-n">85</span><span class="t-p">;</span>New York</span></code></pre>
+<div class="editor-foot bad">✗ line 3: Expected 3 columns but found 2</div>
+</figure></div></section>
+<section class="prose"><h2>Delimiter detection</h2>
+<p>Not all “CSV” uses commas. DocuFormat detects comma, tab, semicolon and pipe delimiters by checking which one gives consistent column counts across the first rows, and reports which it chose.</p></section>
+<section class="prose"><h2>See the structure</h2>
+<p>The <strong>Table</strong> view shows your data in rows and columns, with missing cells highlighted. Ragged rows are very hard to spot in raw text and obvious in a table. The first row is treated as a header when it looks like one.</p></section>
+<section class="prose"><h2>What gets flagged</h2>
+<ul><li>rows with more or fewer columns than the rest</li><li>quoted fields that are never closed</li><li>characters after a closing quote</li><li>unescaped quotes inside unquoted fields</li></ul>
+<p>Quoted fields containing delimiters or line breaks, and doubled quotes (<code>""</code>) as escapes, are parsed correctly.</p></section>
+<section class="prose"><h2>Nothing to run, nothing to upload</h2>
+<p>Parsing happens in your browser. If a file is inconsistent in a way you do not want to untangle by hand, you can opt in to <strong>Explain</strong> or <strong>AI Fix</strong>. For structured, nested data, the <a href="/json-formatter/">JSON formatter</a> may be a better fit.</p></section>
+<section class="prose"><h2>Questions, answered</h2><div class="faq-list"><details><summary>Which delimiters are detected?</summary><p>Comma, tab, semicolon and pipe.</p></details><details><summary>Can it minify CSV?</summary><p>No. There is nothing to minify in CSV, so that option is not offered.</p></details><details><summary>How large a file can I paste?</summary><p>Local parsing has no server limit, though very large inputs are limited by your browser. AI requests accept up to 512 KB.</p></details></div></section>
+<section class="related"><h2>Keep reading</h2><ul><li><a href="/json-formatter/">JSON Formatter</a></li><li><a href="/sql-formatter/">SQL Formatter</a></li><li><a href="/yaml-formatter/">YAML Formatter</a></li><li><a href="/ai-json-fixer/">AI JSON Fixer</a></li><li><a href="/features/">Everything DocuFormat can do</a></li><li><a href="/privacy/">How DocuFormat handles your data</a></li></ul>
+<p class="other-formats">Other formats: <a href="/json-formatter/">JSON</a> · <a href="/yaml-formatter/">YAML</a> · <a href="/xml-formatter/">XML</a> · <a href="/sql-formatter/">SQL</a> · <a href="/curl-formatter/">cURL</a> · <a href="/shell-command-formatter/">Shell</a></p></section>
+</article>
+<section class="closing"><div class="wrap"><h2>Try the CSV formatter on your own input.</h2><p>Paste it, format it, and fix it if it is broken, once DocuFormat opens.</p><div class="cta-row"><a class="button" href="/coming-soon/">Coming soon ↗</a></div></div></section>
+</main>
+<footer class="site-footer">
+<div class="wrap foot">
+<div class="foot-brand"><a class="brand" href="/"><span class="logo" aria-hidden="true">{ }</span>DocuFormat</a><p>Format. Validate. Fix. Explain.</p></div>
+<div><h2>Product</h2><ul><li><a href="/json-formatter/">Formatter</a></li><li><a href="/ai-json-fixer/">AI Fix</a></li><li><a href="/curl-explainer/">Explain</a></li></ul></div>
+<div><h2>Formats</h2><ul><li><a href="/json-formatter/">JSON Formatter</a></li><li><a href="/yaml-formatter/">YAML Formatter</a></li><li><a href="/xml-formatter/">XML Formatter</a></li><li><a href="/csv-formatter/">CSV Formatter</a></li><li><a href="/sql-formatter/">SQL Formatter</a></li><li><a href="/curl-formatter/">cURL Formatter</a></li><li><a href="/shell-command-formatter/">Shell Formatter</a></li></ul></div>
+<div><h2>Resources</h2><ul><li><a href="/features/">Features</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/about/">About</a></li><li><a href="/coming-soon/">Get updates</a></li></ul></div>
+</div>
+<div class="wrap legal"><span>© 2026 DocuFormat</span></div>
+</footer>
+</body>
+</html>

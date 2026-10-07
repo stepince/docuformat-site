@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "engines": { "node": ">=18" },
   "scripts": {
-    "build": "node build.mjs",
-    "dev": "node build.mjs && node server.mjs",
-    "start": "node server.mjs",
-    "check": "node --check build.mjs && node --check server.mjs && node verify.mjs"
-  },
-  "engines": { "node": ">=18" }
+    "dev": "node scripts/build.mjs && node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "preview": "node scripts/serve.mjs",
+    "test": "node scripts/verify.mjs",
+    "lint": "node --check scripts/build.mjs && node --check scripts/serve.mjs && node --check scripts/verify.mjs && node --check src/site.mjs && node --check src/components.mjs && node --check src/home.mjs && node --check src/info-pages.mjs && node --check src/tool-page.mjs && node --check src/content/tools.mjs && node --check src/content/shell.mjs"
+  }
 }

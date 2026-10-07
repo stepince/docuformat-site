@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shell Command Formatter: Bash Single &amp; Multi Line | DocuFormat</title>
+<meta name="description" content="Format Bash and shell commands online. Convert long commands between single-line and multi-line formats for easier copying, pasting, debugging, and documentation.">
+<link rel="canonical" href="https://docuformat.com/shell-command-formatter/">
+<meta name="theme-color" content="#0d1117">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any">
+<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="DocuFormat">
+<meta property="og:title" content="Shell Command Formatter: Bash Single &amp; Multi Line | DocuFormat">
+<meta property="og:description" content="Format Bash and shell commands online. Convert long commands between single-line and multi-line formats for easier copying, pasting, debugging, and documentation.">
+<meta property="og:url" content="https://docuformat.com/shell-command-formatter/">
+<meta property="og:image" content="https://docuformat.com/assets/social.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DocuFormat. Format. Validate. Fix. Explain.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shell Command Formatter: Bash Single &amp; Multi Line | DocuFormat">
+<meta name="twitter:description" content="Format Bash and shell commands online. Convert long commands between single-line and multi-line formats for easier copying, pasting, debugging, and documentation.">
+<meta name="twitter:image" content="https://docuformat.com/assets/social.png">
+<link rel="stylesheet" href="/styles.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Shell Command Formatter","description":"Format Bash and shell commands online. Convert long commands between single-line and multi-line formats for easier copying, pasting, debugging, and documentation.","url":"https://docuformat.com/shell-command-formatter/","isPartOf":{"@type":"WebSite","name":"DocuFormat","url":"https://docuformat.com/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"DocuFormat","item":"https://docuformat.com/"},{"@type":"ListItem","position":2,"name":"Shell Command Formatter","item":"https://docuformat.com/shell-command-formatter/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I convert a bash command to one line?","acceptedAnswer":{"@type":"Answer","text":"Paste the multi-line command and choose single-line output. DocuFormat joins the lines and removes the line continuations, so you can paste the result straight into a terminal."}},{"@type":"Question","name":"How do I format a long shell command?","acceptedAnswer":{"@type":"Answer","text":"Paste it and choose multi-line output. DocuFormat breaks the command at argument and option boundaries and adds the continuation characters for you."}},{"@type":"Question","name":"Does DocuFormat run my command?","acceptedAnswer":{"@type":"Answer","text":"No. Shell commands are formatted as text and are never executed."}},{"@type":"Question","name":"Will formatting change what my command does?","acceptedAnswer":{"@type":"Answer","text":"The goal is that formatting changes only layout, not meaning. It is still sensible to read a rewritten command before you run it, particularly if it uses complicated quoting or escaping."}},{"@type":"Question","name":"Which commands does it work with?","acceptedAnswer":{"@type":"Answer","text":"It is designed for everyday developer commands such as Docker, kubectl, AWS CLI, Git, npm, Maven, Java, SSH, grep, find and cURL."}},{"@type":"Question","name":"Is my command sent to an AI?","acceptedAnswer":{"@type":"Answer","text":"Not for formatting. A command is only sent to an AI provider if you click AI Fix or Explain."}},{"@type":"Question","name":"Does it work for cURL?","acceptedAnswer":{"@type":"Answer","text":"Yes, and cURL gets extra treatment: DocuFormat can identify the method, URL, headers, body and authentication. See the cURL formatter."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+<div class="wrap bar">
+<a class="brand" href="/" aria-label="DocuFormat home"><span class="logo" aria-hidden="true">{ }</span>DocuFormat</a>
+<nav class="nav" aria-label="Main">
+<details class="menu"><summary>Formats</summary><div class="menu-panel"><a href="/json-formatter/">JSON</a><a href="/yaml-formatter/">YAML</a><a href="/xml-formatter/">XML</a><a href="/csv-formatter/">CSV</a><a href="/sql-formatter/">SQL</a><a href="/curl-formatter/">cURL</a><a href="/shell-command-formatter/">Shell</a></div></details>
+<a href="/features/">Features</a>
+<a href="/privacy/">Privacy</a>
+</nav>
+<a class="button small" href="/coming-soon/">Coming soon ↗</a>
+</div>
+</header>
+<main id="main">
+<article class="wrap page">
+<nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">DocuFormat</a><span aria-hidden="true">/</span><span>Shell Command Formatter</span></nav>
+<p class="eyebrow">Shell</p>
+<h1>Shell Command Formatter</h1>
+<p class="lead">Convert long Bash and shell commands between single-line and readable multi-line formats, without fixing line continuations by hand. Paste a command. Format it. Copy it. Done.</p>
+<div class="cta-row"><a class="button" href="/coming-soon/">Coming soon ↗</a><a class="button secondary" href="#example">See an example ↓</a></div>
+<section id="example" class="example" aria-label="Example"><p class="toggle" aria-label="Both directions are supported"><span class="act on">Single Line</span><span class="swap" aria-hidden="true">⇄</span><span class="act on">Multi Line</span></p><h2 class="pair-h">Single line → multi line</h2><div class="before-after"><div><figure class="editor" role="group" aria-label="Input example">
+<figcaption class="editor-bar"><span class="editor-file">command.sh</span><span class="chip ">Single line</span></figcaption>
+<pre class="code" tabindex="0"><code><span class="l"><span class="t-kw">docker</span> run <span class="t-k">--rm</span> <span class="t-k">-p</span> 8080:8080 <span class="t-k">-e</span> APP_ENV=production <span class="t-k">-e</span> LOG_LEVEL=info myapp:latest</span></code></pre>
+</figure></div><div class="arrow" aria-hidden="true">→</div><div><figure class="editor" role="group" aria-label="Output example">
+<figcaption class="editor-bar"><span class="editor-file">multi-line.sh</span><span class="chip ">Multi line</span></figcaption>
+<pre class="code" tabindex="0"><code><span class="l"><span class="t-kw">docker</span> run <span class="t-k">--rm</span> <span class="t-p">\</span></span><span class="l">  <span class="t-k">-p</span> 8080:8080 <span class="t-p">\</span></span><span class="l">  <span class="t-k">-e</span> APP_ENV=production <span class="t-p">\</span></span><span class="l">  <span class="t-k">-e</span> LOG_LEVEL=info <span class="t-p">\</span></span><span class="l">  myapp:latest</span></code></pre>
+<div class="editor-foot ok">✓ Formatted · never executed</div>
+</figure></div></div><h2 class="pair-h">Multi line → single line</h2><div class="before-after"><div><figure class="editor" role="group" aria-label="Input example">
+<figcaption class="editor-bar"><span class="editor-file">multi-line.sh</span><span class="chip ">Multi line</span></figcaption>
+<pre class="code" tabindex="0"><code><span class="l"><span class="t-kw">kubectl</span> create deployment myapp <span class="t-p">\</span></span><span class="l">  <span class="t-k">--image</span>=mycompany/myapp:latest <span class="t-p">\</span></span><span class="l">  <span class="t-k">--replicas</span>=3 <span class="t-p">\</span></span><span class="l">  <span class="t-k">--namespace</span>=production</span></code></pre>
+</figure></div><div class="arrow" aria-hidden="true">→</div><div><figure class="editor" role="group" aria-label="Output example">
+<figcaption class="editor-bar"><span class="editor-file">single-line.sh</span><span class="chip ">Single line</span></figcaption>
+<pre class="code" tabindex="0"><code><span class="l"><span class="t-kw">kubectl</span> create deployment myapp <span class="t-k">--image</span>=mycompany/myapp:latest <span class="t-k">--replicas</span>=3 <span class="t-k">--namespace</span>=production</span></code></pre>
+<div class="editor-foot ok">✓ Ready to paste into a terminal</div>
+</figure></div></div><p class="note">Use multi-line mode when readability matters. Use single-line mode when you just want to paste the command into a terminal.</p></section>
+<section class="prose"><h2>Make long shell commands readable</h2>
+<p>Long commands are great for terminals but terrible for documentation. Multi-line commands are easier to read, review and edit, but they can be frustrating to copy and paste, because every line has to end with the right continuation character. DocuFormat lets you switch between the two instantly.</p>
+<p>Turning <strong>a Bash command from a single line into multiple lines</strong> puts each option on its own row, so you can see what a Docker, kubectl or AWS CLI call is actually doing. Going the other way, you can <strong>convert a shell command to one line</strong> and paste it straight into a terminal, a script or a chat message with no stray backslashes.</p>
+<p>Whether you call it formatting, pretty-printing or beautifying a command, the result is the same command, laid out for the place you are about to use it.</p></section>
+<section class="prose"><h2>Built for developer copy and paste</h2>
+<p>Commands rarely stay in one place. You find them in one environment and need them in another, and a layout that works in one is often awkward in the next:</p>
+<ul class="link-list"><li><strong>Documentation → Terminal</strong></li><li><strong>Terminal → Documentation</strong></li><li><strong>Slack → Terminal</strong></li><li><strong>GitHub → Terminal</strong></li><li><strong>AI assistant → Terminal</strong></li><li><strong>Terminal → Support ticket</strong></li></ul>
+<p>The usual fix is manual cleanup: adding or deleting backslashes, rejoining lines, hoping nothing was lost. DocuFormat removes that step.</p>
+<ol class="flow" aria-label="Workflow"><li>Paste</li><li class="sep" aria-hidden="true">→</li><li>Format</li><li class="sep" aria-hidden="true">→</li><li>Copy</li></ol>
+<p>Common sources include READMEs, Stack Overflow answers, cloud documentation, CI/CD configuration and your own terminal history. It is designed for everyday developer commands such as Docker, kubectl, AWS CLI, Git, npm, Maven, Java, SSH, grep, find and cURL.</p></section>
+<section class="prose"><h2>More than line wrapping</h2>
+<p>A formatter that only inserts a newline every eighty characters will happily cut a quoted string in half. DocuFormat is meant to understand how a shell command is structured, so it breaks the command at argument and option boundaries instead. Where supported, formatting preserves:</p>
+<ul><li>arguments and options</li><li>quoted strings</li><li>environment variables</li><li>pipes and redirects</li><li>command chaining</li><li>shell escaping</li></ul>
+<p>The aim is simple: <strong>formatting should improve readability without changing what the command means.</strong> As with any tool that rewrites a command, read it over before you run it, especially when it involves unusual quoting or escaping.</p>
+<figure class="editor" role="group" aria-label="Multi-line docker run example">
+<figcaption class="editor-bar"><span class="editor-file">formatted.sh</span><span class="chip ">Multi line</span></figcaption>
+<pre class="code" tabindex="0"><code><span class="l"><span class="t-kw">docker</span> run <span class="t-p">\</span></span><span class="l">  <span class="t-k">--name</span> myapp <span class="t-p">\</span></span><span class="l">  <span class="t-k">--restart</span> unless-stopped <span class="t-p">\</span></span><span class="l">  <span class="t-k">-p</span> 8080:8080 <span class="t-p">\</span></span><span class="l">  <span class="t-k">-e</span> APP_ENV=production <span class="t-p">\</span></span><span class="l">  mycompany/myapp:latest</span></code></pre>
+</figure></section>
+<section class="prose"><h2>Shell formatting meets cURL intelligence</h2>
+<p>cURL commands are shell commands, but DocuFormat can understand them at a deeper level. For ordinary shell commands it cleans up the presentation. For cURL it can also identify the HTTP method, URL, headers, request body and authentication, which is what the <a href="/curl-formatter/">cURL formatter</a> and <a href="/curl-parser/">cURL parser</a> show.</p>
+<ol class="flow" aria-label="From shell to cURL"><li>Shell formatter</li><li class="sep" aria-hidden="true">↓</li><li class="ai">cURL detected</li><li class="sep" aria-hidden="true">↓</li><li>Method</li><li>URL</li><li>Headers</li><li>Body</li></ol>
+<p>That is the difference between treating a command as generic text and treating it as developer input.</p></section>
+<section class="prose"><h2>Format the command. Format the data inside it.</h2>
+<p>A cURL command often carries a JSON body squashed into one quoted string. DocuFormat’s cURL formatter lays out the command and pretty-prints the JSON inside it. Here is a real example:</p>
+<div class="before-after"><div><figure class="editor" role="group" aria-label="command.sh example">
+<figcaption class="editor-bar"><span class="editor-file">command.sh</span><span class="chip ">Single line</span></figcaption>
+<pre class="code" tabindex="0"><code><span class="l"><span class="t-kw">curl</span> <span class="t-k">-X</span> POST <span class="t-u">https://api.example.com/users</span> <span class="t-k">-H</span> <span class="t-s">"Content-Type: application/json"</span> <span class="t-k">-d</span> <span class="t-s">'{"name":"Steve","active":true}'</span></span></code></pre>
+</figure></div><div class="arrow" aria-hidden="true">→</div><div><figure class="editor" role="group" aria-label="formatted.sh example">
+<figcaption class="editor-bar"><span class="editor-file">formatted.sh</span><span class="chip ">cURL formatter</span></figcaption>
+<pre class="code" tabindex="0"><code><span class="l"><span class="t-kw">curl</span> <span class="t-p">\</span></span><span class="l">  <span class="t-u">https://api.example.com/users</span> <span class="t-p">\</span></span><span class="l">  <span class="t-k">-H</span> <span class="t-s">'Content-Type: application/json'</span> <span class="t-p">\</span></span><span class="l">  <span class="t-k">--data-raw</span> '{</span><span class="l">  <span class="t-s">"name"</span>: <span class="t-s">"Steve"</span>,</span><span class="l">  <span class="t-s">"active"</span>: true</span><span class="l">}</span><span class="l">'</span></code></pre>
+<div class="editor-foot ok">✓ JSON body formatted · never executed</div>
+</figure></div></div>
+<p>Notice that the explicit <code>-X POST</code> is dropped because a request body already implies POST; the method is still shown in the cURL Request view. More in the <a href="/curl-formatter/">cURL command formatter</a> guide.</p></section>
+<section class="prose"><h2>Broken shell command?</h2>
+<p>Formatting helps when a command is valid. When quoting, escaping, continuations or syntax are broken, DocuFormat’s optional <strong>AI Fix</strong> can help identify the problem and propose a corrected command. Typical problems include:</p>
+<ul><li>broken or unbalanced quotes</li><li>bad escaping</li><li>incorrect line continuations</li><li>malformed cURL</li><li>damaged commands copied from documentation</li></ul>
+<p>AI Fix is optional and only runs when you click it. Your command is not sent to an AI provider before that, you confirm the first time, and the suggestion is a proposal you review, not something applied automatically. See <a href="/ai-json-fixer/">how AI Fix works</a>.</p>
+<div class="cta-row"><a class="button" href="/coming-soon/">Coming soon ↗</a></div></section>
+<section class="prose"><h2>Understand before you run</h2>
+<p>Some commands are hard to read even when they are tidy. <strong>Explain</strong> describes a complicated command in plain language, covering its commands, arguments, options, pipes and redirects, and for commands that contain potentially destructive operations the explanation should make that obvious.</p>
+<figure class="editor" role="group" aria-label="Command to explain">
+<figcaption class="editor-bar"><span class="editor-file">command.sh</span><span class="chip ai">Explain</span></figcaption>
+<pre class="code" tabindex="0"><code><span class="l"><span class="t-kw">find</span> . <span class="t-k">-type</span> f <span class="t-k">-name</span> <span class="t-s">"*.log"</span> <span class="t-k">-mtime</span> +7 <span class="t-k">-print0</span> <span class="t-p">|</span> <span class="t-kw">xargs</span> -0 rm</span></code></pre>
+</figure>
+<p class="caption">Illustrative explanation, generated only when you click Explain: <em>finds regular files named *.log under the current directory that were modified more than 7 days ago, and pipes their names to <code>rm</code>, which deletes them.</em></p>
+<p>The command is analysed as text. DocuFormat does not execute or test it.</p>
+<div class="cta-row"><a class="button" href="/coming-soon/">Coming soon ↗</a></div></section>
+<section class="prose"><h2>DocuFormat formats shell commands. It does not execute them.</h2>
+<p>Shell commands can contain API tokens, passwords, private URLs, authentication headers, environment variables and infrastructure details. So routine formatting is meant to be deterministic and to need no AI, and a command is only sent to an AI provider after you explicitly choose an AI feature.</p>
+<ul><li>Shell commands are treated as data and are never executed.</li><li>SQL is never executed.</li><li>cURL requests are never executed.</li></ul>
+<p>Secrets are not redacted for you, so remove real credentials before using an AI action. Details are on the <a href="/privacy/">privacy page</a>.</p></section>
+<section class="prose"><h2>Questions, answered</h2><div class="faq-list"><details><summary>How do I convert a bash command to one line?</summary><p>Paste the multi-line command and choose single-line output. DocuFormat joins the lines and removes the line continuations, so you can paste the result straight into a terminal.</p></details><details><summary>How do I format a long shell command?</summary><p>Paste it and choose multi-line output. DocuFormat breaks the command at argument and option boundaries and adds the continuation characters for you.</p></details><details><summary>Does DocuFormat run my command?</summary><p>No. Shell commands are formatted as text and are never executed.</p></details><details><summary>Will formatting change what my command does?</summary><p>The goal is that formatting changes only layout, not meaning. It is still sensible to read a rewritten command before you run it, particularly if it uses complicated quoting or escaping.</p></details><details><summary>Which commands does it work with?</summary><p>It is designed for everyday developer commands such as Docker, kubectl, AWS CLI, Git, npm, Maven, Java, SSH, grep, find and cURL.</p></details><details><summary>Is my command sent to an AI?</summary><p>Not for formatting. A command is only sent to an AI provider if you click AI Fix or Explain.</p></details><details><summary>Does it work for cURL?</summary><p>Yes, and cURL gets extra treatment: DocuFormat can identify the method, URL, headers, body and authentication. See the cURL formatter.</p></details></div></section>
+<section class="related"><h2>Keep reading</h2><ul><li><a href="/curl-formatter/">cURL Formatter</a></li><li><a href="/curl-parser/">cURL Parser</a></li><li><a href="/curl-explainer/">cURL Explainer</a></li><li><a href="/ai-json-fixer/">AI JSON Fixer</a></li><li><a href="/features/">Everything DocuFormat can do</a></li><li><a href="/privacy/">How DocuFormat handles your data</a></li></ul>
+<p class="other-formats">Other formats: <a href="/json-formatter/">JSON</a> · <a href="/yaml-formatter/">YAML</a> · <a href="/xml-formatter/">XML</a> · <a href="/csv-formatter/">CSV</a> · <a href="/sql-formatter/">SQL</a> · <a href="/curl-formatter/">cURL</a></p></section>
+</article>
+<section class="closing"><div class="wrap"><h2>Try the Shell formatter on your own input.</h2><p>Paste it, format it, and fix it if it is broken, once DocuFormat opens.</p><div class="cta-row"><a class="button" href="/coming-soon/">Coming soon ↗</a></div></div></section>
+</main>
+<footer class="site-footer">
+<div class="wrap foot">
+<div class="foot-brand"><a class="brand" href="/"><span class="logo" aria-hidden="true">{ }</span>DocuFormat</a><p>Format. Validate. Fix. Explain.</p></div>
+<div><h2>Product</h2><ul><li><a href="/json-formatter/">Formatter</a></li><li><a href="/ai-json-fixer/">AI Fix</a></li><li><a href="/curl-explainer/">Explain</a></li></ul></div>
+<div><h2>Formats</h2><ul><li><a href="/json-formatter/">JSON Formatter</a></li><li><a href="/yaml-formatter/">YAML Formatter</a></li><li><a href="/xml-formatter/">XML Formatter</a></li><li><a href="/csv-formatter/">CSV Formatter</a></li><li><a href="/sql-formatter/">SQL Formatter</a></li><li><a href="/curl-formatter/">cURL Formatter</a></li><li><a href="/shell-command-formatter/">Shell Formatter</a></li></ul></div>
+<div><h2>Resources</h2><ul><li><a href="/features/">Features</a></li><li><a href="/privacy/">Privacy</a></li><li><a href="/about/">About</a></li><li><a href="/coming-soon/">Get updates</a></li></ul></div>
+</div>
+<div class="wrap legal"><span>© 2026 DocuFormat</span></div>
+</footer>
+</body>
+</html>

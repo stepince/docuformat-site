@@ -4,35 +4,41 @@ Static, dependency-free marketing site for DocuFormat (**Format. Validate. Fix. 
 
 ## Commands
 
+Requires Node 18+. No dependency installation is needed.
+
 ```sh
-npm run dev      # build, then preview at http://localhost:3000 (PORT=... to change)
-npm run build    # render everything to dist/
-npm run check    # syntax checks + SEO/integrity verification of dist/ (run build first)
-SERVE_DIST=1 npm start   # preview production output (app links unchanged)
+npm run dev       # build, then serve http://localhost:4321 (PORT=... to change)
+npm run build     # regenerate the HTML pages at the repo root (commit them)
+npm run preview   # serve the existing build
+npm test          # run after building: unique titles/descriptions, one h1, canonicals, internal links, sitemap, inbound links, icons
+npm run lint      # JavaScript syntax checks
 ```
 
-Deploy `dist/` to any static host that serves directory index pages, redirects `/route` to `/route/`, and uses `404.html` for misses.
+## Deployment
+
+Same model as the other sites (Knowdexia, PerfLoad): **GitHub Pages from `main`** (Settings → Pages → Deploy from a branch → `main` / `/ (root)`). The generated pages live at the repo root next to `styles.css`, the icons, `CNAME`, `.nojekyll`, `robots.txt` and `sitemap.xml`. After editing `src/`, run `npm run build` and commit the result. Pushing to `main` deploys; there is no CI step.
+
+`CNAME` is written by the build from `DOCUFORMAT_SITE_URL`, so it currently contains the placeholder `docuformat.com`. Confirm the real domain before enabling Pages (and point DNS at GitHub Pages). Removing a page from `src/` does not delete its old folder at the root; delete it by hand.
 
 ## Configuration (confirm before launch)
 
-The production domain is a placeholder until confirmed; the app is not public yet:
-
 | Variable | Default | Used for |
 |---|---|---|
-| `DOCUFORMAT_SITE_URL` | `https://docuformat.com` | canonical URLs, Open Graph, sitemap, robots |
+| `DOCUFORMAT_SITE_URL` | `https://docuformat.com` (placeholder) | canonical URLs, Open Graph, structured data, sitemap, robots, `CNAME` |
 | `DOCUFORMAT_APP_URL` | *(unset)* | While unset, every CTA reads **Coming soon ↗** and links to `/coming-soon/`. Set it at launch and the CTAs become real "Try DocuFormat →" / "Format X →" links (HTTPS, or HTTP on localhost) |
 | `DOCUFORMAT_FORM_URL` | *(unset)* | Updates sign-up form on `/coming-soon/`. A `docs.google.com/forms/...` link is embedded; any other HTTPS link becomes a button; unset shows "Sign-up opens soon" |
 
-To preview live CTAs locally: `DOCUFORMAT_APP_URL=http://localhost:5173/ npm run dev` (the app's Vite dev server).
+To preview live CTAs locally: `DOCUFORMAT_APP_URL=http://localhost:5173/ npm run dev` (the app's Vite dev server). Rebuild and commit after changing any value.
 
 ## Structure
 
-- `lib/site.mjs`: config, format list, footer links
-- `lib/components.mjs`: layout, header, footer, editor window, CTA, SEO metadata, JSON-LD helpers
-- `lib/highlight.mjs`: build-time syntax highlighter (no client JS; the site ships none)
-- `lib/home.mjs`, `lib/info-pages.mjs`: homepage; features, privacy, about, 404
-- `lib/tool-page.mjs` + `content/tools.mjs`: the 14 tool landing pages (add a page by adding an entry)
-- `build.mjs`: renders pages, `sitemap.xml`, `robots.txt`; `verify.mjs`: unique titles/descriptions, one h1, canonicals, no broken internal links, sitemap coverage, inbound links
+- `src/site.mjs`: config, format list, footer links
+- `src/components.mjs`: layout, header, footer, editor window, CTA, SEO metadata, JSON-LD helpers
+- `src/highlight.mjs`: build-time syntax highlighter (the site ships no JavaScript)
+- `src/home.mjs`, `src/info-pages.mjs`: homepage; features, privacy, about, coming-soon, 404
+- `src/tool-page.mjs` + `src/content/tools.mjs`, `src/content/shell.mjs`: the 15 tool landing pages (add a page by adding an entry)
+- `scripts/build.mjs`: renders pages, `sitemap.xml`, `robots.txt`, `CNAME`, `.nojekyll`; `scripts/serve.mjs`: preview server (serves only published files); `scripts/verify.mjs`: the `npm test` checks; `scripts/create-favicons.py`: regenerates PNG/ICO icons from `icon.svg`
+- Root: `styles.css`, `favicon.ico`, `icon.svg`, `icon-{48,192,512}.png`, `apple-touch-icon.png`, `site.webmanifest`, `assets/` (social image), and the generated pages
 
 ## Verified behavior (audit against the app, 2026-10-06)
 
